@@ -11,10 +11,6 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain.llms import HuggingFaceHub
 import openai
 import os
-
-OPENAI_API_KEY="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"
-openai.api_key=OPENAI_API_KEY
-print(openai.api_key)
 css = '''
 <style>
 .chat-message {
