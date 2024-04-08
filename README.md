@@ -1,1 +1,1 @@
-# CB_projects
+# RAG Chatbot, CB
