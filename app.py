@@ -7,54 +7,10 @@ from langchain.vectorstores import FAISS
 from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
-# from htmlTemplates import css, bot_template, user_template
+from htmlTemplates import css, bot_template, user_template
 from langchain.llms import HuggingFaceHub
 import openai
 import os
-css = '''
-<style>
-.chat-message {
-    padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 1rem; display: flex
-}
-.chat-message.user {
-    background-color: #2b313e
-}
-.chat-message.bot {
-    background-color: #475063
-}
-.chat-message .avatar {
-  width: 20%;
-}
-.chat-message .avatar img {
-  max-width: 78px;
-  max-height: 78px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-.chat-message .message {
-  width: 80%;
-  padding: 0 1.5rem;
-  color: #fff;
-}
-'''
-
-bot_template = '''
-<div class="chat-message bot">
-    <div class="avatar">
-        <img src="https://static.thenounproject.com/png/4516530-200.png" style="max-height: 78px; max-width: 78px; border-radius: 50%; object-fit: cover;">
-    </div>
-    <div class="message">{{MSG}}</div>
-</div>
-'''
-
-user_template = '''
-<div class="chat-message user">
-    <div class="avatar">
-        <img src="https://i.pinimg.com/474x/1e/1e/49/1e1e4996b0f17197b81e578450462c14.jpg">
-    </div>    
-    <div class="message">{{MSG}}</div>
-</div>
-'''
 
 def get_pdf_text(pdf_docs):
     text = ""
